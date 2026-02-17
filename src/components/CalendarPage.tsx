@@ -15,7 +15,7 @@ import html2canvas from 'html2canvas';
 interface CalendarPageProps {
   division: string;
   district: string;
-  onBack: () => void;
+  onChangeLocation: () => void;
 }
 interface PhaseSectionProps {
   title: string;
