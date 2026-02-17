@@ -11,6 +11,7 @@ export default defineConfig({
     allowedHosts: [
       '27568452-612c-44a7-83d2-b93702da7c6a.preview.emergentagent.com',
       '27568452-612c-44a7-83d2-b93702da7c6a.cluster-0.preview.emergentcf.cloud',
+      'ummah-guide-1.cluster-0.preview.emergentcf.cloud',
       'localhost'
     ],
     hmr: {
