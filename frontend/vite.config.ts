@@ -9,8 +9,8 @@ export default defineConfig({
     port: 3000,
     strictPort: true,
     allowedHosts: [
-      '8cfc532c-f318-4c54-8d85-9012718c1cad.preview.emergentagent.com',
-      '8cfc532c-f318-4c54-8d85-9012718c1cad.cluster-0.preview.emergentcf.cloud',
+      '27568452-612c-44a7-83d2-b93702da7c6a.preview.emergentagent.com',
+      '27568452-612c-44a7-83d2-b93702da7c6a.cluster-0.preview.emergentcf.cloud',
       'localhost'
     ],
     hmr: {
