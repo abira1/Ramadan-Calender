@@ -414,7 +414,7 @@ function DayCardModal({ day, onClose, district }: DayCardModalProps) {
 export function CalendarPage({
   division,
   district,
-  onBack
+  onChangeLocation
 }: CalendarPageProps) {
   const [selectedDay, setSelectedDay] = useState<RamadanDay | null>(null);
   const schedule = getScheduleForDistrict(division, district);
