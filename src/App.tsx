@@ -84,6 +84,10 @@ export function App() {
         scrollbarWidth: 'none'
       }}>
 
+      {/* UX Enhancement Components */}
+      <OfflineIndicator />
+      <InstallPrompt />
+
       <AnimatePresence mode="wait">
         {!location ?
         <motion.div
