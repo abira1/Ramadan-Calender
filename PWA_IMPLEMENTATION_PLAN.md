@@ -385,6 +385,8 @@ localStorage.removeItem('ramadan_location');
 2. `/app/vite.config.ts` - Add PWA configuration
 3. `/app/index.html` - Add manifest and theme color meta tags
 4. `/app/src/index.tsx` - Add service worker registration (optional)
+5. **`/app/src/App.tsx` - Add localStorage for location persistence**
+6. **`/app/src/components/CalendarPage.tsx` - Add "Change Location" button**
 
 ### No Changes Needed:
 - All React components remain unchanged
