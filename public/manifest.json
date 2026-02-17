@@ -1,0 +1,40 @@
+{
+  "name": "Toiral Ramadan Calendar 2026",
+  "short_name": "Ramadan 2026",
+  "description": "Complete Ramadan prayer times for Bangladesh with Sehri and Iftar schedules for all divisions and districts. Works offline once installed.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#fdf8f0",
+  "theme_color": "#1e3a2f",
+  "icons": [
+    {
+      "src": "/web/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/web/icon-192-maskable.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/web/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/web/icon-512-maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "categories": ["lifestyle", "utilities", "religion"],
+  "lang": "en-US",
+  "dir": "ltr"
+}
