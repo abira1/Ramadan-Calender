@@ -44,5 +44,65 @@ export default defineConfig({
         type: 'module',
       }
     })
-  ]
+  ],
+  // Build Optimization Configuration (Phase 7)
+  build: {
+    // Enable source maps for debugging (production)
+    sourcemap: false,
+    
+    // Set chunk size warning limit
+    chunkSizeWarningLimit: 600,
+    
+    // Report compressed size for better metrics
+    reportCompressedSize: true,
+    
+    // Optimize CSS
+    cssCodeSplit: true,
+    
+    // Minify options
+    minify: 'terser',
+    terserOptions: {
+      compress: {
+        drop_console: true, // Remove console.logs in production
+        drop_debugger: true,
+        pure_funcs: ['console.log', 'console.info', 'console.debug']
+      }
+    },
+    
+    // Rollup options for manual chunking
+    rollupOptions: {
+      output: {
+        // Manual chunks for better caching and code splitting
+        manualChunks: {
+          // Separate React and ReactDOM into vendor chunk
+          'react-vendor': ['react', 'react-dom'],
+          
+          // Separate Framer Motion (large animation library)
+          'framer-motion': ['framer-motion'],
+          
+          // Separate Lucide React icons
+          'lucide-icons': ['lucide-react'],
+          
+          // Separate html2canvas (for image saving)
+          'html2canvas': ['html2canvas']
+        },
+        
+        // Better file naming for caching
+        chunkFileNames: 'assets/[name]-[hash].js',
+        entryFileNames: 'assets/[name]-[hash].js',
+        assetFileNames: 'assets/[name]-[hash].[ext]'
+      }
+    },
+    
+    // Target modern browsers for smaller bundle
+    target: 'es2015',
+    
+    // Enable CSS minification
+    cssMinify: true
+  },
+  
+  // Optimize deps
+  optimizeDeps: {
+    include: ['react', 'react-dom', 'framer-motion', 'lucide-react', 'html2canvas']
+  }
 })
