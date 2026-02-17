@@ -455,9 +455,20 @@ export function CalendarPage({
         <p className="text-ramadan-green/60 text-sm md:text-base font-medium mb-1 md:mb-2">
           {district}, {division}
         </p>
-        <p className="text-ramadan-gold/60 text-xs md:text-sm max-w-sm mx-auto leading-relaxed">
+        <p className="text-ramadan-gold/60 text-xs md:text-sm max-w-sm mx-auto leading-relaxed mb-4">
           May this blessed month bring you peace, mercy, and abundant blessings
         </p>
+        
+        {/* Change Location Button */}
+        <motion.button
+          onClick={onChangeLocation}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          className="inline-flex items-center gap-2 bg-ramadan-green/10 hover:bg-ramadan-green/20 text-ramadan-green px-4 py-2 rounded-full text-xs md:text-sm font-semibold transition-colors border border-ramadan-green/20"
+        >
+          <MapPin size={14} />
+          Change Location
+        </motion.button>
       </motion.div>
 
       {/* Schedule Sections */}
