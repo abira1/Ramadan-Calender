@@ -61,6 +61,20 @@ export function App() {
     }
     setLocation(null);
   };
+  
+  // Show loading state while checking localStorage
+  if (isLoading) {
+    return (
+      <div className="min-h-screen w-full bg-ramadan-cream flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-pulse text-ramadan-green text-xl font-medium">
+            Loading...
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div
       className="min-h-screen w-full bg-ramadan-cream font-sans selection:bg-ramadan-gold/30 selection:text-ramadan-green [&::-webkit-scrollbar]:hidden"
@@ -106,7 +120,7 @@ export function App() {
             <CalendarPage
             division={location.division}
             district={location.district}
-            onBack={handleBack} />
+            onChangeLocation={handleChangeLocation} />
 
             <Footer />
           </motion.div>
