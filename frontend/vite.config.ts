@@ -8,6 +8,11 @@ export default defineConfig({
     host: '0.0.0.0',
     port: 3000,
     strictPort: true,
+    allowedHosts: [
+      '8cfc532c-f318-4c54-8d85-9012718c1cad.preview.emergentagent.com',
+      '8cfc532c-f318-4c54-8d85-9012718c1cad.cluster-0.preview.emergentcf.cloud',
+      'localhost'
+    ],
     hmr: {
       clientPort: 443,
       protocol: 'wss'
