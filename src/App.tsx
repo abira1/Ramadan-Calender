@@ -1,20 +1,64 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { LandingPage } from './components/LandingPage';
 import { CalendarPage } from './components/CalendarPage';
 import { Footer } from './components/Footer';
+
+const STORAGE_KEY = 'ramadan_location';
+
 export function App() {
   const [location, setLocation] = useState<{
     division: string;
     district: string;
   } | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
+
+  // Load saved location on mount
+  useEffect(() => {
+    try {
+      const savedLocation = localStorage.getItem(STORAGE_KEY);
+      if (savedLocation) {
+        const { division, district } = JSON.parse(savedLocation);
+        if (division && district) {
+          console.log('✅ Loaded saved location:', division, district);
+          setLocation({ division, district });
+        }
+      }
+    } catch (error) {
+      console.error('❌ Error loading saved location:', error);
+      localStorage.removeItem(STORAGE_KEY);
+    } finally {
+      setIsLoading(false);
+    }
+  }, []);
+
   const handleComplete = (division: string, district: string) => {
+    // Save to localStorage
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify({
+        division,
+        district,
+        savedAt: new Date().toISOString()
+      }));
+      console.log('💾 Location saved to localStorage');
+    } catch (error) {
+      console.error('❌ Error saving location:', error);
+    }
+    
     setLocation({
       division,
       district
     });
   };
-  const handleBack = () => {
+  
+  const handleChangeLocation = () => {
+    // Clear saved location
+    try {
+      localStorage.removeItem(STORAGE_KEY);
+      console.log('🗑️ Saved location cleared');
+    } catch (error) {
+      console.error('❌ Error clearing location:', error);
+    }
     setLocation(null);
   };
   return (
