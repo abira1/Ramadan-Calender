@@ -227,7 +227,45 @@ export default defineConfig({
 
 ---
 
-### Phase 5: Offline Indicator & UX Enhancement
+### Phase 5: Local Storage & Persistent Location Selection
+**Objective**: Save user's location selection for future visits
+
+#### Tasks:
+1. ✅ Implement localStorage to save selected division and district
+2. ✅ Auto-load saved location on app startup
+3. ✅ Skip landing page if location already saved
+4. ✅ Add "Change Location" button in calendar view
+5. ✅ Handle localStorage across app updates
+
+#### Implementation Details:
+```typescript
+// Save location after selection
+localStorage.setItem('ramadan_location', JSON.stringify({
+  division: selectedDivision,
+  district: selectedDistrict
+}));
+
+// Load on app startup
+const savedLocation = localStorage.getItem('ramadan_location');
+if (savedLocation) {
+  const { division, district } = JSON.parse(savedLocation);
+  // Auto-navigate to calendar
+}
+
+// Clear on "Change Location"
+localStorage.removeItem('ramadan_location');
+```
+
+#### Expected Outcome:
+- Location saved permanently on device
+- No need to select division/district again
+- Direct access to calendar on subsequent visits
+- Easy way to change location if needed
+- Works offline (localStorage doesn't require internet)
+
+---
+
+### Phase 6: Offline Indicator & UX Enhancement
 **Objective**: Improve user experience with offline status
 
 #### Tasks:
