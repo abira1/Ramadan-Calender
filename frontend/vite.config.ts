@@ -27,8 +27,27 @@ export default defineConfig({
       includeAssets: ['**/*.{png,jpg,jpeg,svg,ico,woff,woff2}'],
       manifest: false, // Using manual manifest.json in public folder
       workbox: {
-        globPatterns: ['**/*.{js,css,html,png,jpg,jpeg,svg,ico,woff,woff2}'],
+        globPatterns: ['**/*.{js,css,html,png,jpg,jpeg,svg,ico,woff,woff2,json}'],
+        // Critical: Handle navigation requests for offline functionality
+        navigateFallback: '/index.html',
+        navigateFallbackDenylist: [/^\/api/],
+        // Ensure the app shell is cached
+        cleanupOutdatedCaches: true,
+        clientsClaim: true,
+        skipWaiting: true,
         runtimeCaching: [
+          // Cache navigation requests
+          {
+            urlPattern: /^https?:\/\/[^/]+\/$/,
+            handler: 'NetworkFirst',
+            options: {
+              cacheName: 'pages',
+              expiration: {
+                maxEntries: 10,
+                maxAgeSeconds: 60 * 60 * 24 * 7 // 7 days
+              }
+            }
+          },
           // Google Fonts Stylesheets
           {
             urlPattern: /^https:\/\/fonts\.googleapis\.com/,
