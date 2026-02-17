@@ -29,22 +29,23 @@ export default defineConfig({
       workbox: {
         globPatterns: ['**/*.{js,css,html,png,jpg,jpeg,svg,ico,woff,woff2,json}'],
         // Critical: Handle navigation requests for offline functionality
-        navigateFallback: '/index.html',
+        navigateFallback: 'index.html',
         navigateFallbackDenylist: [/^\/api/],
         // Ensure the app shell is cached
         cleanupOutdatedCaches: true,
         clientsClaim: true,
         skipWaiting: true,
         runtimeCaching: [
-          // Cache navigation requests
+          // Cache ALL navigation requests (critical for offline)
           {
-            urlPattern: /^https?:\/\/[^/]+\/$/,
+            urlPattern: ({request}) => request.mode === 'navigate',
             handler: 'NetworkFirst',
             options: {
-              cacheName: 'pages',
+              cacheName: 'pages-cache',
+              networkTimeoutSeconds: 3,
               expiration: {
-                maxEntries: 10,
-                maxAgeSeconds: 60 * 60 * 24 * 7 // 7 days
+                maxEntries: 50,
+                maxAgeSeconds: 60 * 60 * 24 * 30 // 30 days
               }
             }
           },
