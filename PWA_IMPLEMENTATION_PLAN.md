@@ -455,6 +455,9 @@ localStorage.removeItem('ramadan_location');
 - **No API calls**: App doesn't make any network requests for data
 - **Perfect for PWA**: Static nature makes it ideal for offline functionality
 - **Existing icons**: App already has all necessary icons prepared
+- **🆕 localStorage for persistence**: User location saved on device (no backend needed)
+- **🆕 One-time selection**: Users select location once, never need to select again
+- **🆕 Change location option**: Easy way to change saved location if needed
 - **Future updates**: Can be pushed through normal deployment, service worker will auto-update
 
 ---
