@@ -8,6 +8,7 @@ export default defineConfig({
     react(),
     VitePWA({
       registerType: 'autoUpdate',
+      injectRegister: 'auto', // Automatically inject service worker registration
       includeAssets: ['**/*.{png,jpg,jpeg,svg,ico,woff,woff2}'],
       manifest: false, // Using manual manifest.json in public folder
       workbox: {
