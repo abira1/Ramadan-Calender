@@ -307,6 +307,9 @@ localStorage.removeItem('ramadan_location');
 - [ ] Turn off internet connection
 - [ ] Verify all pages load offline
 - [ ] Test location selection works offline
+- [ ] **Test location persistence (saved after first selection)**
+- [ ] **Verify app opens directly to calendar on second visit**
+- [ ] **Test "Change Location" button works**
 - [ ] Verify calendar data displays correctly
 - [ ] Test day card modal opens offline
 - [ ] Test "Save Card" feature works offline
@@ -314,17 +317,19 @@ localStorage.removeItem('ramadan_location');
 - [ ] Test app update mechanism
 - [ ] Verify icons display correctly
 - [ ] Test on different devices (Android, iOS, Desktop)
+- [ ] **Test localStorage survives app updates**
 - [ ] Lighthouse PWA audit score > 90
 
 #### Expected Outcome:
 - 100% offline functionality
 - All features working without internet
+- **Location saved permanently (no re-selection needed)**
 - Fast and reliable performance
 - Installable on all platforms
 
 ---
 
-### Phase 8: Documentation
+### Phase 9: Documentation
 **Objective**: Document the implementation and usage
 
 #### Tasks:
