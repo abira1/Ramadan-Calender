@@ -3,6 +3,8 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { LandingPage } from './components/LandingPage';
 import { CalendarPage } from './components/CalendarPage';
 import { Footer } from './components/Footer';
+import { OfflineIndicator } from './components/OfflineIndicator';
+import { InstallPrompt } from './components/InstallPrompt';
 
 const STORAGE_KEY = 'ramadan_location';
 
