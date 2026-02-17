@@ -8,7 +8,8 @@ import {
   SunIcon,
   XIcon,
   CameraIcon,
-  DownloadIcon } from
+  DownloadIcon,
+  MapPin } from
 'lucide-react';
 import clsx from 'clsx';
 import html2canvas from 'html2canvas';
