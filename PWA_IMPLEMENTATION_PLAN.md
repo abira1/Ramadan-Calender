@@ -48,6 +48,7 @@ Transform the Ramadan Calendar application into a fully functional Progressive W
 5. **Save Functionality**: Download day card as PNG image
 6. **Responsive Design**: Mobile-first with desktop support
 7. **Animations**: Smooth transitions and interactions
+8. **🆕 Persistent Location**: Save location selection locally (no re-selection needed)
 
 ### Data Requirements
 - **All data is static** - stored in `bangladeshData.ts`
